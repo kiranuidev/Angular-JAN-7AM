@@ -15,4 +15,20 @@ groceries[3]="Honey";
 console.log(groceries.length);
 for(var i=0;i<groceries.length;i++){
   //do something.   
+    console.log(i);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
