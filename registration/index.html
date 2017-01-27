@@ -15,7 +15,27 @@
                        class="abcd">
             </td>
         </tr>
+            <tr>
+            <td>
+                <label>Date Of Birth</label>
+            </td>
+            <td>
+               <select id="ddlMonths"></select>
+                <select id="ddlDays"></select>
+                <select id="ddlYears"></select>
+            </td>
+        </tr>
         <tr>
+            <td>
+                <label>Country</label>
+            </td>
+            <td>
+                <select id="ddlCountry">
+                <option value="IN">India</option>
+                </select>
+            </td>
+        </tr>
+         <tr>
             <td>
                 <label>Last Name</label>
             </td>
@@ -23,9 +43,36 @@
                 <input type="text" id="txtLastName">
             </td>
         </tr>
+        <tr>
+            <td>
+                <label>Gender</label>
+            </td>
+            <td>
+                <input type="radio"
+                       value="M"
+                       name="gender"
+                       id="rdbGenderM">M
+                <input type="radio"
+                       value="F"
+                        name="gender"
+                       id="rdbGenderF">F
+                <input type="radio"
+                        name="gender"
+                       value="NA"
+                       id="rdbGenderNA">Do not reveal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label></label>
+            </td>
+            <td>
+                <input type="checkbox" id="chkTerms">
+            </td>
+        </tr>
     </table>
     <button id="btnSubmit" onclick="readData()">Register</button>
-    <script src="register.js"></script>
+    <script src="registerPro.js"></script>
 </body>
 
 </html>
