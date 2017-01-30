@@ -2,6 +2,11 @@ var elementReferences = {};
 
 //Page initialization Logic
 function pageInit() {
+    var date = new Date();
+    console.log(date);
+    console.log(date.getFullYear());
+        console.log(date.getMonth());
+     console.log(date.getDay());
     getElementReferences();
     bindCountryList();
     bindMonthsList();
@@ -49,58 +54,59 @@ function bindMonthsList() {
 function getMonths() {
     return [{
             name: "Jan",
-            code: "1"
+            code: "0"
         },
         {
             name: "Feb",
-            code: "2"
+            code: "1"
         },
         {
             name: "Mar",
-            code: "3"
+            code: "2"
         },
         {
             name: "Apr",
-            code: "4"
+            code: "3"
         },
         {
             name: "May",
-            code: "5"
+            code: "4"
         },
         {
             name: "Jun",
-            code: "6"
+            code: "5"
         },
         {
             name: "Jul",
-            code: "7"
+            code: "6"
         },
         {
             name: "Aug",
-            code: "8"
+            code: "7"
         },
         {
             name: "Sep",
-            code: "9"
+            code: "8"
         },
         {
             name: "Oct",
-            code: "10"
+            code: "9"
         },
         {
             name: "Nov",
-            code: "11"
+            code: "10"
         },
         {
             name: "Dec",
-            code: "12"
+            code: "11"
         }];
 
 }
 
 function buildYearList() {
-
-    for (var i = 2017 - 20; i <= 2017; i++) {
+var date = new Date();
+    var year = date.getFullYear();
+    for (var i = year - 20; i <= year; i++) {
         var value = i;
         var text = i;
         var optionTag = buildOptionTag(value, text);
