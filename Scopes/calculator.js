@@ -1,21 +1,24 @@
 (function (param) {
      console.log(param);
-    window.calculate={};
-    window.calculate.add = function (first, second) {
+   
+    var add = function (first, second) {
         return first + second;
     };
 
-    function subtract(first, second) {
+    var  subtract = function (first, second) {
         return first - second;
-    }
+    };
 
-    function multiply(first, second) {
+    var multiply = function (first, second) {
         return first * second;
-    }
+    };
 
-    function divide(first, second) {
+   var divide= function (first, second) {
         return first / second;
-    }
-
+    };
+    
+    window.calculate={};
+    window.calculate.addition = add;
+    window.calculate.subtract = subtract;
 
 })(window);
