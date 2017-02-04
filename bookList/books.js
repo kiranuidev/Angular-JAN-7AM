@@ -19,18 +19,7 @@
 
     var addBook = function (item) {
         var booksLength =bookList.length;
-        for (var i = 0; i <booksLength ; i++) {
-            if (
-                bookList[i].title != item.title && bookList[i].author != item.author &&
-                bookList[i].id != item.id)
-            {
-                bookList.push(item);
-            }
-        }
-    };
-
-    var deleteBook = function (item) {
-        var booksLength =bookList.length;
+         var bookIndex=0;
         var isBookExisting =false;
         for (var i = 0; i < booksLength; i++) {
             if (bookList[i].title == item.title && bookList[i].author == item.author &&
@@ -38,19 +27,38 @@
                isBookExisting=true;
             }
         };
+        if(!isBookExisting){
+            bookList.push(item);
+        }
+    };
+
+    var deleteBook = function (item) {
+        var booksLength =bookList.length;
+        var bookIndex=0;
+        var isBookExisting =false;
+        for (var i = 0; i < booksLength; i++) {
+            if (bookList[i].title == item.title && bookList[i].author == item.author &&
+                bookList[i].id == item.id) {
+               isBookExisting=true;
+                bookIndex=i;
+            }
+        };
         if(isBookExisting){
             console.log(true);
+            console.log(bookIndex);
+            bookList.splice(1,1);
+            console.log(bookList);
         }
 
     };
 
-    addBook({
+    /*addBook({
         id: 102,
         author: "bhumit",
         title: "Faq"
     });
     console.log(getBooks());
-    deleteBook({id: "101",author: "Ravi",title:"Nodjes"  });
+    deleteBook({id: "101",author: "Ravi",title:"Nodjes"  });*/
     //console.log(getBooks());
 
 })(window);
