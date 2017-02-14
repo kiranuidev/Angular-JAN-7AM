@@ -1,0 +1,23 @@
+{
+    "products": [
+        {
+            "name": "iPhone",
+            "id": "1",
+            "description": "Cool Phones",
+            "price": "2000"
+        },
+        {
+            "name": "samsung",
+            "id": "2",
+            "description": "Famous one",
+            "price": "1000"
+        },
+        {
+            "name": "OnePlus3",
+            "id": "2",
+            "description": "Famous one",
+            "price": "1000"
+        }
+
+    ]
+}
