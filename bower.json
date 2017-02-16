@@ -1,0 +1,21 @@
+{
+  "name": "Angular-JAN-7AM",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/kiranuidev/Angular-JAN-7AM",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.2",
+    "underscore": "^1.8.3",
+    "font-awesome": "^4.7.0"
+  }
+}
