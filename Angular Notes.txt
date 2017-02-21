@@ -1,0 +1,15 @@
+ng-app
+   Auto bootstrapping directive i.e. it will initialize the application with the features of angular.
+   Only one ng-app is permitted per html.
+   It will work only on and inside the tag.
+   we can have ng-app any where on the html.
+   it is called a directive.
+
+ng-model
+  it is a directive applied to the input and data collection controls.
+  it is a key and value pair.  
+  eg: <input type="text" ng-model="welcome">
+     key is welcome
+     value is the data that we are entering inside the textbox.
+
+{{}} --- expressions. they will evaulate the data inside them.

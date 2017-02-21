@@ -1,0 +1,33 @@
+<html ng-app>
+
+<head >
+    <title>{{welcome}}</title>
+    <script src="bower_components/angular/angular.js"></script>
+</head>
+
+<body>
+    
+    <input type="text" ng-model="first">
+    <input type="text" ng-model="last">
+    <button ng-click='result=first-last'>+</button>
+    <h1>{{result}}</h1>
+    <hr/>
+    
+    
+    
+    <input type="text" ng-model="welcome">
+    <h1>{{welcome}}</h1>
+     
+    <input type="checkbox" ng-model="iAgree">
+    <h1>{{iAgree}}</h1>
+    
+     <input type="radio" name="gender" ng-model="gender" value="M">
+    
+     <input type="radio" name="gender" ng-model="gender" value="F">
+    <h1>{{gender}}</h1>
+    
+    <h1>Maths</h1>
+    <h1>{{10-"12"}}</h1>
+</body>
+
+</html>
