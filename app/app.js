@@ -18,12 +18,12 @@
     vm.headerTemplate = "app/header/header.tpl.html";
     vm.appName = "BitBlogger";
     vm.show = false;
-    vm.showAppName = function () {
-      vm.show = true;
-    };
-    vm.hideAppName = function () {
-      vm.show = false;
-    };
+    // vm.showAppName = function () {
+    //   vm.show = true;
+    // };
+    // vm.hideAppName = function () {
+    //   vm.show = false;
+    // };
   }
 
 })();
