@@ -7,7 +7,16 @@
 </head>
 
 <body>
-        <div ng-include="'app/header/header.tpl.html'"></div>
+    <div class="container" ng-controller="mainCtrl as mc">
+        <button class="btn btn-primary" ng-click="mc.showAppName()">Show</button>
+         <button class="btn btn-primary" ng-click="mc.hideAppName()">Hide</button>
+        <!--<button class="btn btn-primary" ng-click="mc.show=mc.show==true?false:true">
+         Show
+         </button>-->
+        <h1 ng-show="mc.show">{{mc.appName}}</h1>
+
+    </div>
+
     <script src="app/app.js"></script>
     <script src="app/header/header.js"></script>
     <script src="app/login/login.js"></script>
