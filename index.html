@@ -8,19 +8,22 @@
 
 <body>
     <div class="container" ng-controller="mainCtrl as mc">
-        <button class="btn btn-primary" ng-click="mc.showAppName()">Show</button>
-         <button class="btn btn-primary" ng-click="mc.hideAppName()">Hide</button>
-        <!--<button class="btn btn-primary" ng-click="mc.show=mc.show==true?false:true">
-         Show
-         </button>-->
-        <h1 ng-show="mc.show">{{mc.appName}}</h1>
 
+        <div ng-include="mc.headerTemplate"></div>
+
+
+        <div ng-include="mc.commentsTemplate"></div>
     </div>
 
-    <script src="app/app.js"></script>
     <script src="app/header/header.js"></script>
+    <script src="app/header/headerCtrl.js"></script>
     <script src="app/login/login.js"></script>
+
+
+    <script src="app/comments/comments.js"></script>
+    <script src="app/comments/commentsCtrl.js"></script>
     <script src="app/register/register.js"></script>
+    <script src="app/app.js"></script>
 </body>
 
 </html>

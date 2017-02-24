@@ -2,7 +2,7 @@
 
   //module creation.
   angular.module("bitblogger",
-    ["register", "login", "header"]);
+    ["register", "login", "header","comments"]);
 
   //consuming the module
   angular.module("bitblogger")
@@ -16,14 +16,14 @@
   function mainCtrlFn() {
     var vm = this;
     vm.headerTemplate = "app/header/header.tpl.html";
+    vm.commentsTemplate ="app/comments/comments.tpl.html";
     vm.appName = "BitBlogger";
     vm.show = false;
-    // vm.showAppName = function () {
-    //   vm.show = true;
-    // };
-    // vm.hideAppName = function () {
-    //   vm.show = false;
-    // };
+    vm.firstName="Test";
+   
+    vm.tryMe= function(){
+      console.log(vm.firstName);
+    };
   }
 
 })();
