@@ -1,10 +1,11 @@
 (function () {
 
-    function registerCtrl() {
-
+    function registerCtrl(registerSvc) {
+        var vm= this;
+        this.countries = registerSvc.getCountries();
     }
 
     angular.module("register")
-        .controller("registerCtrl", [registerCtrl]);
+        .controller("registerCtrl", ["registerSvc",registerCtrl]);
 
 })();
