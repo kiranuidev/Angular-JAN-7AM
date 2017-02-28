@@ -1,5 +1,5 @@
 (function () {
-    function commentsSvc() {
+    function commentsSvc($http) {
         this.getComments = function () {
             return [{
                 "blogId": "1",
@@ -13,8 +13,12 @@
             }
             ];
         };
+
+        this.getCommentsFromApi=function(){
+            return $http.get("api/comments.json");
+        };
     }
 
     angular.module("comments")
-        .service("commentsSvc", [commentsSvc]);
+        .service("commentsSvc", ["$http",commentsSvc]);
 })();
