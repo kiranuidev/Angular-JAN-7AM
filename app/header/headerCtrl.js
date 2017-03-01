@@ -6,9 +6,7 @@
 
         //TODO: Move navItems to service in future.
         vm.navItems = [
-            { "key": "home", "value": "Home" },
-            { "key": "products", "value": "Products" },
-            
+            { "key": "posts", "value": "Posts" },
             { "key": "register", "value": "Register" },
             { "key": "login", "value": "Login" },
         ];

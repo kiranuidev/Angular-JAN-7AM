@@ -1,0 +1,46 @@
+{
+    "posts": [
+        {
+            "_id": 1,
+            "postText": "This post is related to the Angularjs",
+            "createdDate": "03/01/2017",
+            "postedBy": {
+                "userid": "user1",
+                "name": "Kiran"
+            },
+            "comments": [
+                {
+                    "postId": "1",
+                    "commentId": "cm1",
+                    "commentText": "Your Blog is awesome"
+                },
+                {
+                    "postId": "1",
+                    "commentId": "cm2",
+                    "commentText": "Hey Kiran you made it clear.... Thanks"
+                }
+            ]
+        },
+        {
+            "_id": 2,
+            "postText": "This post is related to the Nodejs",
+            "createdDate": "03/01/2017",
+            "postedBy": {
+                "userid": "user2",
+                "name": "Ravi"
+            },
+            "comments": [
+                {
+                    "postId": "2",
+                    "commentId": "cm1",
+                    "commentText": "Nodejs is Awesome"
+                },
+                {
+                    "postId": "2",
+                    "commentId": "cm2",
+                    "commentText": "Hey Kiran you made it clear.... Thanks"
+                }
+            ]
+        }
+    ]
+}

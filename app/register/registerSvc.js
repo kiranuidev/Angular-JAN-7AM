@@ -8,7 +8,7 @@
         };
 
         this.getCountriesFromJson=function(){
-           return $http.get("api/countrieas.json");
+           return $http.get("api/countries.json");
         };
     }
     angular.module("register")

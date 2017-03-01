@@ -1,0 +1,17 @@
+<div ng-controller="postsCtrl as pc">
+    <div class="panel panel-default" ng-repeat="post in pc.posts">
+        <div class="panel-body">
+            <label>{{post.postText}}</label>
+        </div>
+        <div class="panel panel-default">
+        <div class="panel-heading">Comments</div>
+
+
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-default" ng-repeat="comment in post.comments">
+            <label>{{comment.commentText}}</label>
+        </div>
+    </div>
+    </div>
+</div>
