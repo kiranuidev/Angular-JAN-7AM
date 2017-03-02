@@ -1,5 +1,5 @@
 (function () {
-    function headerCtrl() {
+    function headerCtrl($state) {
 
         
         var vm = this;
@@ -10,8 +10,12 @@
             { "key": "register", "value": "Register" },
             { "key": "login", "value": "Login" },
         ];
+        vm.changeState= function(data){
+            console.log(data);
+            $state.go(data);
+        };
     }
 
     angular.module("header")
-        .controller("headerCtrl", [headerCtrl])
+        .controller("headerCtrl", ["$state",headerCtrl])
 })();
