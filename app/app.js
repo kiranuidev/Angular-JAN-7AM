@@ -9,54 +9,45 @@
   //consuming the module
   //inject $stateProvider to config.
   angular.module("bitblogger")
-    .config(["$stateProvider", function ($stateProvider) {
-      console.log("Config : Bitblogger");
-      //define states.
-      var loginObj = {
-        templateUrl: "app/login/login.tpl.html"
-      };
-      var registerObj = {
-        templateUrl: "app/register/register.tpl.html",
-        controller: "registerCtrl  as rc"
-      };
-      var postMain = {
-        templateUrl:"app/posts/postsMain.tpl.html",
-         name:"posts",
-        views:{
-          "statusUpdate":{
-            templateUrl:"app/posts/posts.tpl.html"
-          },
-          "groups":{
-            templateUrl:"app/groups/groups.tpl.html"
-          },
-          "friends":{
-            templateUrl:"app/friends/friends.tpl.html"
-          }
-        },
-      }
-      var postObj = {
-        name:"posts",
-        views:{
-          "statusUpdate":{
-            templateUrl:"app/posts/posts.tpl.html"
-          },
-          "groups":{
-            templateUrl:"app/groups/groups.tpl.html"
-          },
-          "friends":{
-            templateUrl:"app/friends/friends.tpl.html"
-          }
-        },
-       
-       
-      };
+    .config(["$stateProvider", "$urlRouterProvider", "$locationProvider",
+      function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        console.log("Config : Bitblogger");
+        $locationProvider.html5Mode(false).hashPrefix('!');
+        //define states.
+        var loginObj = {
+          templateUrl: "app/login/login.tpl.html"
+        };
+        var registerObj = {
+         
+              templateUrl: "app/register/register.tpl.html",
+              controller: "registerCtrl  as rc"
+           
 
-      $stateProvider.state("login", loginObj);
-      $stateProvider.state("register", registerObj);
-      $stateProvider.state("posts", postMain);
-     // $stateProvider.state("posts",postObj);
-     
-    }]);
+        };
+        var postMain = {
+          views: {
+            "statusUpdate": {
+              templateUrl: "app/posts/posts.tpl.html"
+            },
+            "groups": {
+              templateUrl: "app/groups/groups.tpl.html"
+            },
+            "friends": {
+              templateUrl: "app/friends/friends.tpl.html"
+            },
+            "content": {
+              template: "<h1>Template</h1><div ui-view='posts.statusUpdate'></div>"
+            }
+          }
+        }
+
+
+        $stateProvider.state("login", loginObj);
+        $stateProvider.state("register", registerObj);
+        $stateProvider.state("posts", postMain);
+        // $stateProvider.state("posts",postObj);
+
+      }]);
 
   angular.module("bitblogger")
     .controller("mainCtrl", [mainCtrlFn]);

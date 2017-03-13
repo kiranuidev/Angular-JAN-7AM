@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <link data-require="bootstrap-css@*" data-semver="3.0.3" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+  <link data-require="font-awesome@*" data-semver="4.0.3" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.9/angular.js" data-semver="1.2.9"></script>
+  <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.min.js"></script>
+  <script data-require="angular-animate@*" data-semver="1.2.9" src="http://code.angularjs.org/1.2.9/angular-animate.js"></script>
+  <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+  <script src="app.js"></script>
+  <!--<script src="ui-bootstrap-tpls-0.10.0.js"></script>-->
+</head>
+
+<body ng-controller="Tabs">
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!--  <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-click="collapsed = !collapsed" ng-model="collapsed" ng-init="collapsed = true">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-right" href="#">
+          <i class="icon-home"></i>
+            <div ui-view="viewC"></div>
+        </a>
+    </div>-->
+  </div>
+  <br><br>
+
+  <!--<h3>angularJS 1.2.* + ui.bootstrap.tabs + ui-router</h3>
+  <h4>Tabs & Multiple Named Views example (plus nests)</h4>
+  
+  <span>$state = <b>{{$state.current.name}}</b></span><br>
+  <span>$state url = <b>{{$state.$current.url.source}}</b></span>-->
+  
+    <tabset>
+      <tab>
+        <tab-heading>
+          <a ui-sref="left" ui-sref-active="active">Left</a>
+        </tab-heading>
+      </tab>
+      <tab>
+        <tab-heading>
+          <a ui-sref="right" ui-sref-active="active">Right</a>
+        </tab-heading>
+      </tab>
+    </tabset>
+    <div class="row">
+      <br>
+        <div ui-view="viewA">
+          <!--Here is the A content-->
+        </div>
+    </div>
+
+</body>
+
+</html>

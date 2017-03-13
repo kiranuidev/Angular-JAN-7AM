@@ -1,7 +1,11 @@
 (function () {
 
-    function registerCtrl(registerSvc) {
+    function registerCtrl(registerSvc,$state) {
         var vm = this;
+        vm.nextPage= function(){
+            $state.go("login");
+            //go go to other page...
+        }
         //vm.countries = registerSvc.getCountries();
         //make a call to the register service
         //fetch the data from the json
@@ -25,6 +29,6 @@
     }
 
     angular.module("register")
-        .controller("registerCtrl", ["registerSvc", registerCtrl]);
+        .controller("registerCtrl", ["registerSvc","$state", registerCtrl]);
 
 })();
