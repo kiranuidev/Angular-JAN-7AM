@@ -25,20 +25,10 @@
 
         };
         var postMain = {
-          views: {
-            "statusUpdate": {
-              templateUrl: "app/posts/posts.tpl.html"
-            },
-            "groups": {
-              templateUrl: "app/groups/groups.tpl.html"
-            },
-            "friends": {
-              templateUrl: "app/friends/friends.tpl.html"
-            },
-            "content": {
-              template: "<h1>Template</h1><div ui-view='posts.statusUpdate'></div>"
-            }
-          }
+        
+              templateUrl: "app/posts/posts.tpl.html",
+              controller:"postsCtrl as pc",
+              params:{userInfo:null}
         }
 
 

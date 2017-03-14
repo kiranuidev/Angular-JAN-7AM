@@ -1,5 +1,6 @@
 (function () {
-    function postsCtrl(postsSvc) {
+    function postsCtrl(postsSvc,$state) {
+        console.log($state);
         var vm = this;
         postsSvc.getPosts()
             .then(function (response) {
@@ -10,5 +11,5 @@
             });
 
     }
-    angular.module("posts").controller("postsCtrl", ["postsSvc", postsCtrl]);
+    angular.module("posts").controller("postsCtrl", ["postsSvc","$state", postsCtrl]);
 })();
