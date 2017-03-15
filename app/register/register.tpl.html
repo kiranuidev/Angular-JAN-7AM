@@ -1,6 +1,20 @@
 <form class="form-horizontal"
  name="registerForm"
 novalidate>
+ <div class="form-group">
+      <label class="control-label col-sm-2">Email</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" 
+      ng-model="rc.user.email"
+      name="email"
+      ng-required ="true" 
+      ng-minlength="3"
+      ng-pattern ="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
+      <p ng-if="registerForm.email.$error.minlength">Email should be minimum 3 characters.</p>
+      <p ng-if="registerForm.email.$error.required && registerForm.email.$dirty ">Email is required.</p>
+    <p ng-if="registerForm.email.$error.pattern">Invalid Email</p>
+    </div>
+  </div>
   <div class="form-group">
       <label class="control-label col-sm-2">User Name</label>
     <div class="col-sm-4">
@@ -8,20 +22,25 @@ novalidate>
       ng-model="rc.user.username"
       name="username"
       ng-required ="true" 
-      ng-minlength="3">
+      ng-minlength="3"
+      ng-pattern ="/^[A-z]+$/">
       <p ng-if="registerForm.username.$error.minlength">User name should be minimum 3 characters.</p>
-      <p ng-if="registerForm.username.$error.required">User name is required.</p>
+      <p ng-if="registerForm.username.$error.required && registerForm.username.$dirty">User name is required.</p>
     </div>
   </div>
    <div class="form-group">
       <label class="control-label col-sm-2">Password</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" 
+      <input type="password" class="form-control" 
       ng-model="rc.user.password"
       name="password"
-      ng-required ="true">
-       <p ng-if="registerForm.password.$error.required"> Password is required.</p>
-    </div>
+      ng-required ="true"
+      ng-minlength="5"
+      ng-pattern="/^[A-z0-9$#@]+$/">
+       <p ng-if="registerForm.password.$error.required && registerForm.password.$dirty"> Password is required.</p>
+         <p ng-if="registerForm.password.$error.minlength"> Password minimum length is 5.</p>
+   <p ng-if="registerForm.password.$error.pattern">Invalid password.</p>
+  </div>
   </div>
    <div class="form-group">
       <label class="control-label col-sm-2">Age</label>
