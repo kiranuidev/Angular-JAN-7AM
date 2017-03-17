@@ -6,8 +6,10 @@
 
         //TODO: Move navItems to service in future.
         vm.navItems = [
+                     
             { "key": "posts", "value": "Posts" },
             { "key": "register", "value": "Register" },
+              { "key": "products", "value": "Products" },
             { "key": "login", "value": "Login" },
         ];
         vm.changeState= function(data){

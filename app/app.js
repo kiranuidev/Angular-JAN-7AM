@@ -4,7 +4,7 @@
   /* ui routing inject the ui.router module to the main module*/
 
   angular.module("bitblogger",
-    ["register", "login", "header", "comments", "posts", "ui.router"]);
+    ["register", "login", "header", "comments", "posts", "ui.router","products"]);
 
   //consuming the module
   //inject $stateProvider to config.
@@ -29,9 +29,15 @@
               templateUrl: "app/posts/posts.tpl.html",
               controller:"postsCtrl as pc",
               params:{userInfo:null}
+        };
+
+           var productsObj = {
+              templateUrl: "app/products/products.tpl.html",
+              controller:"productCtrl as prc",
         }
 
 
+        $stateProvider.state("products",productsObj);
         $stateProvider.state("login", loginObj);
         $stateProvider.state("register", registerObj);
         $stateProvider.state("posts", postMain);
