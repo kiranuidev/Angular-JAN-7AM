@@ -17,7 +17,7 @@
             return dfd.promise;
         };
     }
-    function productCtrl(productSvc,$scope) {
+    function productCtrl(productSvc,$scope,$rootScope) {
           var vm= this;
           productSvc.getProducts()
           .then(function(response){
@@ -28,6 +28,9 @@
           .catch(function(error){
               console.log(error);
           });
+          $scope.addProductToCart= function(item){
+              $rootScope.$broadcast("ADD-ITEM-T0-CART");
+          };
     }
     angular.module("products")
         .service("productSvc",
@@ -35,6 +38,6 @@
 
     angular.module("products")
         .controller("productCtrl",
-        ["productSvc","$scope", productCtrl]);
+        ["productSvc","$scope","$rootScope", productCtrl]);
 
 })();

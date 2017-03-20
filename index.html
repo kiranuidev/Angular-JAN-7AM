@@ -11,8 +11,16 @@
 
 <body>
     <div class="container" ng-controller="mainCtrl as mc">
+        <!--directive as an Element-->
+        <custom-nav-bar></custom-nav-bar>
+        
+        <!--directive as an Attribute -->
+        <div custom-nav-bar></div>
 
-        <div ng-include="mc.headerTemplate"></div>
+        <!--driective as a class-->
+        <div class="custom-nav-bar"></div>
+
+        <!--<div ng-include="mc.headerTemplate"></div>-->
         <div ui-view></div>
           
     </div>
@@ -34,6 +42,7 @@
     <script src="app/register/registerSvc.js"></script>
     <script src="app/register/registerCtrl.js"></script>
     <script src="app/products/products.js"></script>
+    <script src="app/common/common.js"></script>
     <script src="app/app.js"></script>
 </body>
 

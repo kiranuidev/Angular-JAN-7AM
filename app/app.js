@@ -4,7 +4,8 @@
   /* ui routing inject the ui.router module to the main module*/
 
   angular.module("bitblogger",
-    ["register", "login", "header", "comments", "posts", "ui.router","products"]);
+    ["register", "login", "header",
+    "common", "comments", "posts", "ui.router","products"]);
 
   //consuming the module
   //inject $stateProvider to config.
