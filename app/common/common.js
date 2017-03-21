@@ -16,8 +16,43 @@ return{
      restrict:"A,,E,C"
  };
 }
+function customDatePicker(){
+    return{
+        restrict:"A",
+        link:function(scope,element,attrs){
+            element.datepicker();
+        }
+    };
+}
+
+function numbersOnly(){
+  return {
+      restrict:"A",
+      link:function(scope,element,attrs){
+          //scope: inherits parent controllers scope.
+          //element: get the complete html of the element.
+          //attrs: attributes of the element where the directive is declared.
+          console.log(scope);
+          console.log(element);
+          console.log(attrs);
+          var maxlength = attrs["maxlength"]?attrs["maxlength"]:0;
+          element.bind("keypress",function(e){
+              console.log(e.keyCode);
+              var selectedKey = e.key;
+              
+              var reg = new RegExp(/^[0-9]$/);
+              if(!(reg.test(selectedKey)||this.value.length>maxlength)){
+                  e.preventDefault();
+              }
+
+          });
+      }
+  };
+}
 
 angular.module("common")
 .directive("customNavBar",[customNavBar]);
 angular.module("common")
-.directive("customBrand",[customBrand]);
+.directive("customBrand",[customBrand])
+.directive("numbersOnly",[numbersOnly])
+.directive("customDatePicker",[customDatePicker])
