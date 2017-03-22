@@ -23,9 +23,11 @@ novalidate>
       name="username"
       ng-required ="true" 
       ng-minlength="3"
-      ng-pattern ="/^[A-z]+$/">
+      ng-pattern ="/^[A-z]+$/"
+      check-user-name>
       <p ng-if="registerForm.username.$error.minlength">User name should be minimum 3 characters.</p>
       <p ng-if="registerForm.username.$error.required && registerForm.username.$dirty">User name is required.</p>
+      <p ng-if="registerForm.username.$error.checkuser && registerForm.username.$dirty">User name already exists</p>
     </div>
   </div>
    <div class="form-group">
