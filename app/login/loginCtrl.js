@@ -1,8 +1,14 @@
 (function(){
-    function loginCtrl(){
-        
+    function loginCtrl($scope){
+        $scope.name="kiran";
+        setTimeout(function(){
+            $scope.name="Ravi";
+            $scope.$apply();
+        },5000);
+       sessionStorage.setItem("myuser",$scope.name);
+        localStorage.setItem("myuser",$scope.name);
     }
 
     angular.module("login")
-    .controller("loginCtrl",[loginCtrl])
+    .controller("loginCtrl",["$scope",loginCtrl])
 })();

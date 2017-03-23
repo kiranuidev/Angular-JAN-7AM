@@ -1,20 +1,30 @@
 <span details item="selectedProduct.Price"></span>
+<div class="row">
+  <div class="col-xs-3">
+    <input type="text" class="form-control" placeholder="Search By Model" ng-model="searchByModel">
+  </div>
+   <div class="col-xs-3">
+    <input type="text" class="form-control" placeholder="Search By Price" ng-model="searchByPrice">
+  </div>
+</div>
+
 <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>S.No</th>
-        <th>Model</th>
-        <th>Price</th>
-         <th><a href="" ng-click="showMore()">Show More</a></th>
-      </tr>
-    </thead>
-    <!--<tr ng-repeat="item in prc.products">-->
-        <tr ng-repeat="item in products|limitTo:numberOfProducts">
-        <td>{{item.index}}</td>
-        <td>{{item.Model|uppercase}}</td>
-         <td>{{item.Price|currency :"Rs."}}</td>
-         <td><button class="btn btn-primary" 
-         ng-click="addProductToCart(item)">Add To Cart
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Model</th>
+      <th><a href=""  ng-click="sortByPrice()">Price</a></th>
+      <th><a href="" ng-click="showMore()">Show More</a></th>
+    </tr>
+  </thead>
+  <!--<tr ng-repeat="item in prc.products">-->
+  <!--<tr ng-repeat="item in products|limitTo:numberOfProducts">-->
+    <!--<tr  ng-repeat="item in products|filter:search">-->
+      <tr  ng-repeat="item in products|orderBy:priceCriteria|filter:{Model:searchByModel}|filter:{Price:searchByPrice}">
+    <td>{{item.index}}</td>
+    <td>{{item.Model|uppercase}}</td>
+    <td>{{item.Price|currency :"Rs."}}</td>
+    <td><button class="btn btn-primary" ng-click="addProductToCart(item)">Add To Cart
            </button>
-        </tr>
+  </tr>
 </table>

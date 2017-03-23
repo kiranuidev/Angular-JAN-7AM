@@ -20,6 +20,7 @@
     function productCtrl(productSvc, $scope, $rootScope) {
         var vm = this;
         $scope.numberOfProducts = 5;
+        $scope.priceCriteria="Price";
         productSvc.getProducts()
             .then(function (response) {
                 console.log(response);
@@ -35,6 +36,14 @@
         };
         $scope.showMore = function () {
             $scope.numberOfProducts += 5;
+        };
+        $scope.sortByPrice=function(){
+          if($scope.priceCriteria=="Price"){
+              $scope.priceCriteria="-Price";
+          }
+          else{
+              $scope.priceCriteria="Price";
+          }
         };
     }
     angular.module("products")

@@ -5,6 +5,7 @@
         var vm = this;
         vm.cartItems =0;
         vm.brandName ="BitBloggerApp"
+        
         //TODO: Move navItems to service in future.
         vm.navItems = [
                      

@@ -27,12 +27,24 @@
 
         <!--<div ng-include="mc.headerTemplate"></div>-->
         <div ui-view></div>
-          
+        <hr>
+        <div class="row">
+            <div class="col-xs-4">
+                Contact : 
+                <div>
+                Indian office: {{"1234567890"|phoneFormat:"IN"}}
+                </div>
+                <div>
+                US office: {{"1234567890"|phoneFormat:"US"}}
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="app/header/header.js"></script>
     <script src="app/header/headerCtrl.js"></script>
     <script src="app/login/login.js"></script>
+     <script src="app/login/loginCtrl.js"></script>
 
 
     <script src="app/comments/comments.js"></script>
@@ -48,6 +60,7 @@
     <script src="app/register/registerCtrl.js"></script>
     <script src="app/products/products.js"></script>
     <script src="app/common/common.js"></script>
+      <script src="app/common/commonFilters.js"></script>
     <script src="app/app.js"></script>
 </body>
 

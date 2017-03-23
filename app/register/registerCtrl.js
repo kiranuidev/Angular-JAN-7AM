@@ -1,8 +1,13 @@
 (function () {
 
     function registerCtrl(registerSvc,$state) {
+        
+        var mydata = localStorage.getItem("myuser");
+        console.log(mydata);
+        
         var vm = this;
         vm.user ={};
+        vm.user.username=mydata;
         vm.nextPage= function(){
             $state.go("posts",{userInfo:vm.user});
             //go go to other page...
