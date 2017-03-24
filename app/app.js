@@ -10,18 +10,25 @@
   //consuming the module
   //inject $stateProvider to config.
   angular.module("bitblogger")
-    .config(["$stateProvider", "$urlRouterProvider", "$locationProvider",
-      function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    .config(["$stateProvider", "$urlRouterProvider", "$locationProvider","versionProvider",
+      function ($stateProvider, $urlRouterProvider, $locationProvider,versionProvider) {
         console.log("Config : Bitblogger");
         $locationProvider.html5Mode(false).hashPrefix('!');
         //define states.
+        console.log(versionProvider.$get());
+        versionProvider.changeVersion("2.0.0");
+         console.log(versionProvider.$get());
+
+        $urlRouterProvider.otherwise("/posts");
         var loginObj = {
-          templateUrl: "app/login/login.tpl.html"
+          templateUrl: "app/login/login.tpl.html",
+          
         };
         var registerObj = {
          
               templateUrl: "app/register/register.tpl.html",
-              controller: "registerCtrl  as rc"
+              controller: "registerCtrl  as rc",
+            
            
 
         };
@@ -29,12 +36,14 @@
         
               templateUrl: "app/posts/posts.tpl.html",
               controller:"postsCtrl as pc",
-              params:{userInfo:null}
+              params:{userInfo:null},
+              url:"/posts"
         };
 
            var productsObj = {
               templateUrl: "app/products/products.tpl.html",
               controller:"productCtrl as prc",
+            
         }
 
 
@@ -63,5 +72,20 @@
       console.log(vm.firstName);
     };
   }
+
+})();
+
+(function(){
+  function versionProvider(){
+     var buildNumber ="1.0.0";
+     this.changeVersion = function(data){
+       buildNumber=data;
+     };
+     this.$get =function(){
+       return buildNumber;
+     };
+  }
+  angular.module("bitblogger")
+  .provider("version",[versionProvider]);
 
 })();

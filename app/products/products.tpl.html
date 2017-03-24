@@ -22,8 +22,8 @@
     <!--<tr  ng-repeat="item in products|filter:search">-->
       <tr  ng-repeat="item in products|orderBy:priceCriteria|filter:{Model:searchByModel}|filter:{Price:searchByPrice}">
     <td>{{item.index}}</td>
-    <td>{{item.Model|uppercase}}</td>
-    <td>{{item.Price|currency :"Rs."}}</td>
+    <td>{{::item.Model|uppercase}}</td>
+    <td>{{::item.Price|currency :"Rs."}}</td>
     <td><button class="btn btn-primary" ng-click="addProductToCart(item)">Add To Cart
            </button>
   </tr>

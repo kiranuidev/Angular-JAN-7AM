@@ -31,5 +31,5 @@
     }
 
       angular.module("register")
-    .service("registerFac",["$http",registerFac]);
+    .factory("registerFac",["$http",registerFac]);
 })();
