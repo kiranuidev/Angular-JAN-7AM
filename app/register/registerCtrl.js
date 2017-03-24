@@ -1,6 +1,6 @@
 (function () {
 
-    function registerCtrl(registerSvc,$state) {
+    function registerCtrl(registerSvc,registerFac,$state) {
         
         var mydata = localStorage.getItem("myuser");
         console.log(mydata);
@@ -15,7 +15,7 @@
         //vm.countries = registerSvc.getCountries();
         //make a call to the register service
         //fetch the data from the json
-        registerSvc.getCountriesFromJson()
+        registerFac.getCountriesFromJson()
         //handle positive response
             .then(function (response) {
                 console.log(response);
@@ -36,6 +36,6 @@
     }
 
     angular.module("register")
-        .controller("registerCtrl", ["registerSvc","$state", registerCtrl]);
+        .controller("registerCtrl", ["registerSvc","registerFac","$state", registerCtrl]);
 
 })();
